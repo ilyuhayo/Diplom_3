@@ -12,3 +12,6 @@ class BasePage:
     def find_element_located(self, locator, time=10):
         return WebDriverWait(self.driver, time).until(expected_conditions.presence_of_element_located(locator),
                                                       message=f'Not found {locator}')
+
+    def get_current_url(self):
+        return self.driver.current_url
