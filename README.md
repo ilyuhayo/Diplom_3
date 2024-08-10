@@ -1,1 +1,2 @@
-# Diplom_3
+ui_autotests
+Pet project for autotesting UI with Python
