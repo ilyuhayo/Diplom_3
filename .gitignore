@@ -4,3 +4,7 @@ __pycache__/
 locators/__pycache__/
 pages/__pycache__/
 tests/__pycache__/
+.DS_Store
+locators/.DS_Store
+pages/.DS_Store
+tests/.DS_Store
