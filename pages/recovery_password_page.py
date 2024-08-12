@@ -20,7 +20,7 @@ class RecoveryPasswordPage(BasePage):
         self.find_element_located(RecoveryPasswordPageLocators.PASSWORD_FIELD).send_keys("123456")
 
     def click_view_password_button(self):
-        self.find_button_located(RecoveryPasswordPageLocators.VIEW_PASSWORD_BUTTON).click()
+        self.find_button_located_hard(RecoveryPasswordPageLocators.VIEW_PASSWORD_BUTTON).click()
 
     def get_active_password_field(self):
         active_password_field = self.find_element_located(RecoveryPasswordPageLocators.PASSWORD_FIELD_ACTIVE)

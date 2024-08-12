@@ -2,6 +2,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators.base_page_locators import BasePageLocators
 from time import sleep
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class BasePage:
@@ -13,6 +14,18 @@ class BasePage:
 
     def find_element_located(self, locator, time=10):
         return WebDriverWait(self.browser, time).until(EC.presence_of_element_located(locator))
+
+    def find_element_located_hard(self, locator, time=10):
+        WebDriverWait(self.browser, 20).until(EC.invisibility_of_element_located(BasePageLocators.OVERLAY))
+
+        element = WebDriverWait(self.browser, time).until(EC.visibility_of_element_located(locator))
+
+        self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
+
+        element = WebDriverWait(self.browser, time).until(EC.presence_of_element_located(locator))
+
+        sleep(1)
+        return element
 
     def find_button_located(self, locator, time=10):
         return WebDriverWait(self.browser, time).until(EC.element_to_be_clickable(locator))
@@ -28,3 +41,9 @@ class BasePage:
     def get_current_url(self):
         return self.browser.current_url
 
+    def drag_and_drop(self, source_locator, target_locator, time=10):
+        source_element = self.find_element_located(source_locator, time)
+        target_element = self.find_element_located(target_locator, time)
+
+        actions = ActionChains(self.browser)
+        actions.drag_and_drop(source_element, target_element).perform()
