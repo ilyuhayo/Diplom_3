@@ -11,3 +11,4 @@ class MainPageLocators:
     INGREDIENT_COUNTER = (By.XPATH, "//p[@class='counter_counter__num__3nue1']")
     MAKE_ORDER_BUTTON = (By.XPATH, "//button[@class='button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg']")
     IDENTIFIER_ORDER_TEXT = (By.XPATH, "//p[@class='undefined text text_type_main-medium mb-15']")
+    ORDER_NUMBER_ON_ORDER_CREATED_WINDOW = (By.XPATH, "//h2[@class='Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text text_type_digits-large mb-8']")

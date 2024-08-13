@@ -27,7 +27,7 @@ class MainPage(BasePage):
         return header_text
 
     def click_close_window_detail_ingredient_button(self):
-        self.find_button_located(MainPageLocators.CLOSE_WINDOW_DETAILS_INGREDIENT_BUTTON).click()
+        self.find_button_located_hard(MainPageLocators.CLOSE_WINDOW_DETAILS_INGREDIENT_BUTTON).click()
 
     def check_make_burger_header_text(self):
         header_text = self.find_element_located(MainPageLocators.MAKE_BURGER_HEADER).text
@@ -47,3 +47,6 @@ class MainPage(BasePage):
         order_status_text = self.find_button_located_hard(MainPageLocators.IDENTIFIER_ORDER_TEXT).text
         return order_status_text
 
+    def check_order_number_on_order_created_window(self):
+        order_status_text = self.find_button_located_hard(MainPageLocators.ORDER_NUMBER_ON_ORDER_CREATED_WINDOW).text
+        return int(order_status_text)
