@@ -14,7 +14,7 @@ class OrderFeedPage(BasePage):
         self.find_element_located(OrderFeedPageLocators.FIRST_ORDER_IN_ORDER_LIST).click()
 
     def check_my_order_in_general_order_list(self):
-        order_element = self.find_element_located(OrderFeedPageLocators.ORDER_NUMBER_0105453)
+        order_element = self.find_element_located(OrderFeedPageLocators.ORDER_NUMBER_0105543)
 
         self.browser.execute_script("arguments[0].scrollIntoView();", order_element)
 
