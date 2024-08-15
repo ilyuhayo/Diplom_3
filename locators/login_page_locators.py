@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 
 
 class LoginPageLocators:
-    LOGIN_PAGE_URL = "https://stellarburgers.nomoreparties.site/login"
     RECOVERY_PASSWORD_LINK = (By.XPATH, "//a[@class='Auth_link__1fOlj' and text()='Восстановить пароль']")
     EMAIL_FIELD = (By.XPATH, "//input[@class='text input__textfield text_type_main-default' and @name='name']")
     PASSWORD_FIELD = (By.XPATH, "//input[@class='text input__textfield text_type_main-default' and @name='Пароль']")

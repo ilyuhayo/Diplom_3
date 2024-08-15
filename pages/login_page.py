@@ -7,16 +7,16 @@ class LoginPage(BasePage):
         super().__init__(browser)
 
     def wait_for_login_form(self):
-        self.find_element_located(LoginPageLocators.LOGIN_FROM)
+        self.find_element_located_visibility(LoginPageLocators.LOGIN_FROM)
 
     def click_recovery_password_link(self):
-        self.find_button_located(LoginPageLocators.RECOVERY_PASSWORD_LINK).click()
+        self.find_button_located_hard(LoginPageLocators.RECOVERY_PASSWORD_LINK).click()
 
     def input_email_field(self):
-        self.find_element_located(LoginPageLocators.EMAIL_FIELD).send_keys("zolotov_10@mail.ru")
+        self.find_element_located_visibility(LoginPageLocators.EMAIL_FIELD).send_keys("zolotov_10@mail.ru")
 
     def input_password_field(self):
-        self.find_element_located(LoginPageLocators.PASSWORD_FIELD).send_keys("123456")
+        self.find_element_located_visibility(LoginPageLocators.PASSWORD_FIELD).send_keys("123456")
 
     def click_enter_button(self):
-        self.find_button_located(LoginPageLocators.ENTER_BUTTON).click()
+        self.find_button_located_hard(LoginPageLocators.ENTER_BUTTON).click()

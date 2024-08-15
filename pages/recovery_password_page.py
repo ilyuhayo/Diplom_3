@@ -7,23 +7,23 @@ class RecoveryPasswordPage(BasePage):
         super().__init__(browser)
 
     def input_email_field(self):
-        self.find_element_located(RecoveryPasswordPageLocators.EMAIL_FIELD).send_keys("zolotov_10@mail.ru")
+        self.find_element_located_visibility(RecoveryPasswordPageLocators.EMAIL_FIELD).send_keys("zolotov_10@mail.ru")
 
     def click_restore_button(self):
         self.find_button_located(RecoveryPasswordPageLocators.RESTORE_BUTTON).click()
 
     def check_restore_password_header_text(self):
-        header_text = self.find_element_located(RecoveryPasswordPageLocators.RESTORE_PASSWORD_HEADER_TEXT).text
+        header_text = self.find_element_located_visibility(RecoveryPasswordPageLocators.RESTORE_PASSWORD_HEADER_TEXT).text
         return header_text
 
     def input_password_field(self):
-        self.find_element_located(RecoveryPasswordPageLocators.PASSWORD_FIELD).send_keys("123456")
+        self.find_element_located_visibility(RecoveryPasswordPageLocators.PASSWORD_FIELD).send_keys("123456")
 
     def click_view_password_button(self):
         self.find_button_located_hard(RecoveryPasswordPageLocators.VIEW_PASSWORD_BUTTON).click()
 
     def get_active_password_field(self):
-        active_password_field = self.find_element_located(RecoveryPasswordPageLocators.PASSWORD_FIELD_ACTIVE)
+        active_password_field = self.find_element_located_visibility(RecoveryPasswordPageLocators.PASSWORD_FIELD_ACTIVE)
         return active_password_field
 
 
