@@ -1,5 +1,6 @@
 from pages.base_page import BasePage
 from locators.recovery_password_page_locators import RecoveryPasswordPageLocators
+from data import UserData
 
 
 class RecoveryPasswordPage(BasePage):
@@ -7,7 +8,7 @@ class RecoveryPasswordPage(BasePage):
         super().__init__(browser)
 
     def input_email_field(self):
-        self.find_element_located_visibility(RecoveryPasswordPageLocators.EMAIL_FIELD).send_keys("zolotov_10@mail.ru")
+        self.find_element_located_visibility(RecoveryPasswordPageLocators.EMAIL_FIELD).send_keys(UserData.USER_EMAIL)
 
     def click_restore_button(self):
         self.find_button_located(RecoveryPasswordPageLocators.RESTORE_BUTTON).click()
@@ -17,7 +18,7 @@ class RecoveryPasswordPage(BasePage):
         return header_text
 
     def input_password_field(self):
-        self.find_element_located_visibility(RecoveryPasswordPageLocators.PASSWORD_FIELD).send_keys("123456")
+        self.find_element_located_visibility(RecoveryPasswordPageLocators.PASSWORD_FIELD).send_keys(UserData.USER_PASSWORD)
 
     def click_view_password_button(self):
         self.find_button_located_hard(RecoveryPasswordPageLocators.VIEW_PASSWORD_BUTTON).click()

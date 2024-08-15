@@ -3,13 +3,12 @@ from conftest import browser
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
 from pages.personal_area_page import PersonalAreaPage
-from locators.base_page_locators import BasePageLocators
-from locators.login_page_locators import LoginPageLocators
-from locators.personal_area_page_locators import PersonalAreaPageLocators
+import allure
 from urls import URLS
 
 
 class TestPersonalAreaPage:
+    @allure.title("Переход по клику на Личный кабинет")
     def test_click_on_personal_area_button(self, browser):
         main_page = MainPage(browser)
         main_page.go_to_site(URLS.MAIN_PAGE_URL)
@@ -17,6 +16,7 @@ class TestPersonalAreaPage:
         assert main_page.get_current_url() == URLS.LOGIN_PAGE_URL
 
 
+    @allure.title("Переход в раздел История заказов")
     def test_go_to_order_history_section(self, browser):
         main_page = MainPage(browser)
         main_page.go_to_site(URLS.MAIN_PAGE_URL)
@@ -31,6 +31,7 @@ class TestPersonalAreaPage:
         assert personal_area_page.get_current_url() == URLS.ORDER_HISTORY_PAGE_URL
 
 
+    @allure.title("Выход из аккаунта")
     def test_exit_from_account(self, browser):
         main_page = MainPage(browser)
         main_page.go_to_site(URLS.MAIN_PAGE_URL)
@@ -44,4 +45,3 @@ class TestPersonalAreaPage:
         personal_area_page.click_exit_from_account_button()
         login_page.wait_for_login_form()
         assert login_page.get_current_url() == URLS.LOGIN_PAGE_URL
-
